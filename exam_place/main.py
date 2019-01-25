@@ -85,7 +85,8 @@ class Application(object):
         sheet.write(2, 1, "MatNr", style_header_center)
         sheet.write(2, 2, "Nachname", style_header_left)
         sheet.write(2, 3, "Vorname", style_header_left)
-        sheet.write(2, 4, "Unterschrift", style_header_left)
+        sheet.write(2, 4, "Spickzettel", style_header_left)
+        sheet.write(2, 5, "Unterschrift", style_header_left)
         for row, key in enumerate(key_list, start=3):
             student = self._students[key]
             sheet.write(row, 0, row - 2, style_list_center)
@@ -93,6 +94,7 @@ class Application(object):
             sheet.write(row, 2, student.last)
             sheet.write(row, 3, student.first)
             sheet.write(row, 4, ' ', style_list_sign)
+            sheet.write(row, 5, ' ', style_list_sign)
         sheet.col(0).width = 0x600
         sheet.col(1).width = 0xA00
         sheet.col(2).width = 0x1400
