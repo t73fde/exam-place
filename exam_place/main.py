@@ -80,7 +80,7 @@ class Application(object):
         style_list_sign = xlwt.easyxf('border: bottom 1; align: horiz left')
         workbook = xlwt.Workbook()
         sheet = workbook.add_sheet('Placement')
-        sheet.write_merge(0, 0, 0, 4, self._topic, style0)
+        sheet.write_merge(0, 0, 0, 5, self._topic, style0)
         sheet.write(2, 0, "Platz", style_header_center)
         sheet.write(2, 1, "MatNr", style_header_center)
         sheet.write(2, 2, "Nachname", style_header_left)
