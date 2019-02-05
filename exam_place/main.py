@@ -77,6 +77,7 @@ class Application(object):
         style_header_center = xlwt.easyxf('font: bold on; align: horiz center')
         style_header_left = xlwt.easyxf('font: bold on; align: horiz left')
         style_list_center = xlwt.easyxf('align: horiz center')
+        style_list_cross = xlwt.easyxf('border: bottom 1; border: right 1; align: horiz left')
         style_list_sign = xlwt.easyxf('border: bottom 1; align: horiz left')
         workbook = xlwt.Workbook()
         sheet = workbook.add_sheet('Placement')
@@ -93,12 +94,14 @@ class Application(object):
             sheet.write(row, 1, key, style_list_center)
             sheet.write(row, 2, student.last)
             sheet.write(row, 3, student.first)
-            sheet.write(row, 4, ' ', style_list_sign)
+            sheet.write(row, 4, ' ', style_list_cross)
             sheet.write(row, 5, ' ', style_list_sign)
         sheet.col(0).width = 0x600
         sheet.col(1).width = 0xA00
         sheet.col(2).width = 0x1400
         sheet.col(3).width = 0x1400
+        sheet.col(4).width = 0xC00
+        sheet.col(5).width = 0x1400
         workbook.save(out_name)
 
 
